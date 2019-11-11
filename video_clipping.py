@@ -150,7 +150,7 @@ def main():
 
         # VIDEO ENCODING OPTIONS
         ffopts+=" -vcodec libx264"
-        ffopts+=" -preset fastest"  # balance encoding speed vs compression ratio
+        ffopts+=" -preset superfast"  # balance encoding speed vs compression ratio
         ffopts+=" -profile:v main -level 3.0 "  # compatibility, see https://trac.ffmpeg.org/wiki/Encode/H.264
         ffopts+=" -pix_fmt yuv420p"  # pixel format of MiniDV is yuv411, x264 supports yuv420
         ffopts+=" -crf 20"  # The constant quality setting. Higher value = less quality, smaller file. Lower = better quality, bigger file. Sane values are [18 - 24]
@@ -183,7 +183,7 @@ def main():
 
         ffopts+=" -profile:v main -level 3.0 "  # compatibility, see https://trac.ffmpeg.org/wiki/Encode/H.264
         ffopts+=" -pix_fmt yuv420p"  # pixel format of MiniDV is yuv411, x264 supports yuv420
-        ffopts+=" -preset fastest"  # balance encoding speed vs compression ratio
+        ffopts+=" -preset superfast"  # balance encoding speed vs compression ratio
         ffopts+=" -crf 18"  # The constant quality setting. Higher value = less quality, smaller file. Lower = better quality, bigger file. Sane values are [18 - 24]
         ffopts+=" -x264-params ref=4"
         ffopts+=" -tune film"
