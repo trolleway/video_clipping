@@ -18,7 +18,6 @@ def main():
 
     args = p.parse_args()
 
-    #print args
 
     src = args.src
     #to = args.to
@@ -40,7 +39,7 @@ def main():
     if preset == 'copy_dv':
         cmd = 'ffmpeg -i "{src}" -ss {start} {to} -vcodec copy -acodec copy "{result}"'
         cmd = cmd.format(src=src, start=start, to=to, result = result)
-        print cmd
+        print(cmd)
         os.system(cmd)
     if preset == 'indexprint':
         ffopts=""
@@ -71,7 +70,7 @@ def main():
         if to is not None: part_to = ' -to ' + to + ' '
         cmd = 'ffmpeg -i "{src}" -ss {start} {part_to} {ffopts} "{result}"'
         cmd = cmd.format(src=src, start=start, to=to, result = result, part_to=part_to,ffopts=ffopts)
-        print cmd
+        print(cmd)
         os.system(cmd)
     elif preset == 'srt_test':
         ffopts=""
@@ -81,7 +80,7 @@ def main():
 
         cmd = 'ffmpeg -i "{src}" -i "{subtitle_file}" -ss {start} {to} {ffopts} -vcodec copy -acodec copy "{result}"'
         cmd = cmd.format(src=src, start=start, to=to, result = result,ffopts=ffopts, subtitle_file = subtitle_file)
-        print cmd
+        print(cmd)
         os.system(cmd)
 
     elif preset == 'mp4':
@@ -110,7 +109,7 @@ def main():
 
         cmd = 'ffmpeg -i "{src}" -ss {start} {to} {ffopts} "{result}"'
         cmd = cmd.format(src=src, start=start, to=to, result = result,ffopts=ffopts)
-        print cmd
+        print(cmd)
         os.system(cmd)
         
     elif preset == 'twitter':
@@ -140,7 +139,7 @@ def main():
 
         cmd = 'ffmpeg -i "{src}" -ss {start}  {to} {ffopts} "{result}"'
         cmd = cmd.format(src=src, start=start, to=to, result = result,ffopts=ffopts)
-        print cmd
+        print(cmd)
         os.system(cmd)
     elif preset == 'twitter_interpolate60fps':
         #two-pass process with fastest mode
@@ -171,7 +170,7 @@ def main():
 
         cmd = 'ffmpeg -i "{src}" -ss {start} {to} {ffopts} "{result}"'
         cmd = cmd.format(src=src, start=start, to=to, result = result,ffopts=ffopts)
-        print cmd
+        print(cmd)
         os.system(cmd)
         
         ffopts=""
@@ -200,7 +199,7 @@ def main():
 
         cmd = 'ffmpeg -i "{src}" -ss {start} {to} {ffopts} "{result}"'
         cmd = cmd.format(src=src, start=start, to=to, result = result,ffopts=ffopts)
-        print cmd
+        print(cmd)
         os.system(cmd)
         
         os.unlink(pass1_filename)
@@ -232,7 +231,7 @@ def main():
 
         cmd = 'ffmpeg -i "{src}" -ss {start} {to} {ffopts} "{result}"'
         cmd = cmd.format(src=src, start=start, to=to, result = result,ffopts=ffopts)
-        print cmd
+        print(cmd)
         os.system(cmd)
         
     quit()
