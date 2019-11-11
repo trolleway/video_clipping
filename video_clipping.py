@@ -14,7 +14,7 @@ def main():
     p.add_argument('--start', help='start timecode', type=str, required=False)
     p.add_argument('--to', help='end timecode', type=str, required=False)
     p.add_argument('--src', help='Source video file', type=str, required=True, widget="FileChooser")
-    p.add_argument('--preset', help='encoding preset', type=str, choices=['copy_dv', 'mp4','srt_test','indexprint','twitter','interpolate_60fps' ], required=False,widget="Dropdown")
+    p.add_argument('--preset', help='encoding preset', type=str, choices=['copy_dv', 'mp4','srt_test','twitter','twitter_interpolate60fps','interpolate_60fps' ], required=False,widget="Dropdown")
 
     args = p.parse_args()
 
