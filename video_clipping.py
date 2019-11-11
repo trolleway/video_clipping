@@ -166,12 +166,17 @@ def main():
 
         result = change_filename_extension(result,'.mp4')
         pass1_filename = result+'.pass1.mp4'
+        pass2_filename = result
         result = pass1_filename
 
         cmd = 'ffmpeg -i "{src}" -ss {start} {to} {ffopts} "{result}"'
         cmd = cmd.format(src=src, start=start, to=to, result = result,ffopts=ffopts)
         print(cmd)
         os.system(cmd)
+        
+        result = pass2_filename
+        #----------------
+        
         
         ffopts=""
         
