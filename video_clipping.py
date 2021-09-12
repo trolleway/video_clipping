@@ -37,7 +37,7 @@ def main():
 
     preset = args.preset
     if preset == 'copy_dv':
-        cmd = 'ffmpeg -i "{src}" -ss {start} {to} -vcodec copy -acodec copy "{result}"'
+        cmd = 'ffmpeg -i "{src}" -ss {start} -to {to} -vcodec copy -acodec copy "{result}"'
         cmd = cmd.format(src=src, start=start, to=to, result = result)
         print(cmd)
         os.system(cmd)
